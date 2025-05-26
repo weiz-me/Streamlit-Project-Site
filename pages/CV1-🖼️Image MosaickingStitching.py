@@ -20,36 +20,36 @@ def upload_to_np(uploaded_file):
    return img1_float64
 
 st.title("CV1-Image MosaickingStitching")
-st.write("#### Input your own images")
-col1, col2= st.columns(2)
+# st.write("#### Input your own images")
+# col1, col2= st.columns(2)
 
-with col1:
-   left_image = st.file_uploader("Upload your left image.")
-   if left_image:
-      l = upload_to_np(left_image)
-      st.image(left_image)
-      st.image(l)
+# with col1:
+#    left_image = st.file_uploader("Upload your left image.")
+#    if left_image:
+#       l = upload_to_np(left_image)
+#       st.image(left_image)
+#       st.image(l)
 
-with col2:
-   middle_image = st.file_uploader("Upload your middle image (base image).")
-   if middle_image:
-      st.image(middle_image)
-      m = upload_to_np(middle_image)
-      st.image(m)
-
-
-stitch = st.button("stitch images")
-if stitch:
-    if not left_image:
-      st.write("please input left image..")
-    elif not middle_image:
-      st.write("please input middle image")
-    else:
-      img = solutions.stitch_imgs([m,l])
+# with col2:
+#    middle_image = st.file_uploader("Upload your middle image (base image).")
+#    if middle_image:
+#       st.image(middle_image)
+#       m = upload_to_np(middle_image)
+#       st.image(m)
 
 
-    img = np.clip(img, 0, 1)
-    st.image(img, caption="result", use_column_width=True)
+# # stitch = st.button("stitch images")
+# if stitch:
+#     if not left_image:
+#       st.write("please input left image..")
+#     elif not middle_image:
+#       st.write("please input middle image")
+#     else:
+#       img = solutions.stitch_imgs([m,l])
+
+
+#     img = np.clip(img, 0, 1)
+#     st.image(img, caption="result", use_column_width=True)
 st.write("#### Input Example")
 col1, col2, col3 = st.columns(3)
 with col1:

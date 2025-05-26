@@ -15,12 +15,14 @@ st.markdown(
     **👈 Select a Project from the dropdown on the left**
 
     ### Project List
-    Hi, I am currently looking for internship and full time.
 
+    Hi, I am currently looking and full time.
+
+    - PP: Job Application Tracker - May 2025
     - HPML: Trasnformer Inference Optimization (https://github.com/weiz-me/hpml_proj)
     - ASE: Prompt Service API and Client App (https://github.com/orgs/ASE4156/repositories)
     - AWS: CUThen Chatting APP - Fall 2023 (https://github.com/Infernaught/CUThen)
-    - AWS: Photo Album - Fall 2023
+    - AWS: Photo Album - Fall 2023 
     - CV1: Image Motion Flow - Fall 2023
     - CV1: Image Mosaicking/Stitching - Fall 2023
     - CV1: Line and Circle Recoginizer - Fall 2023
