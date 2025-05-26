@@ -62,7 +62,6 @@ jax==0.4.6
 jedi==0.18.2
 Jinja2==3.1.2
 joblib==1.2.0
-jpy==0.13.0
 jsonpointer==2.3
 jsonschema==4.17.3
 jupyter==1.0.0
