@@ -8,7 +8,9 @@ uploaded_file = st.file_uploader("Upload your image (jpg, jpeg, png)..")
 camera_img = st.camera_input("Take a photo")
 
 import tensorflow as tf
-from keras.preprocessing.image import ImageDataGenerator
+# from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
 import PIL
 import numpy as np
 import keras.utils as image

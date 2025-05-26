@@ -1,0 +1,9 @@
+streamlit
+seaborn
+opencv-python
+scipy
+scikit-image
+joblib
+yfinance
+scikit-learn
+tensorflow
