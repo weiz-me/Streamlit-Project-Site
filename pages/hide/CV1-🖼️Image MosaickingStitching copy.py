@@ -21,7 +21,7 @@ def upload_to_np(uploaded_file):
 
 st.title("CV1-Image MosaickingStitching")
 st.write("#### Input your own images")
-col1, col2= st.columns(2)
+col1, col2, col3 = st.columns(3)
 
 with col1:
    left_image = st.file_uploader("Upload your left image.")
@@ -38,14 +38,23 @@ with col2:
       st.image(m)
 
 
+with col3:
+   right_image = st.file_uploader("Upload your right image (optional).")
+   if right_image:
+      st.image(right_image)
+      r = upload_to_np(right_image)
+      st.image(r)
+
 stitch = st.button("stitch images")
 if stitch:
     if not left_image:
       st.write("please input left image..")
     elif not middle_image:
       st.write("please input middle image")
-    else:
+    elif not right_image:
       img = solutions.stitch_imgs([m,l])
+    else:
+      img = solutions.stitch_imgs([m,l,r])
 
 
     img = np.clip(img, 0, 1)
