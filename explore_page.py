@@ -26,9 +26,11 @@ import tensorflow as tf
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 
 from tensorflow.keras.optimizers import Adam
+import tensorflow.keras as keras
 
 
-model2 = tf.keras.models.load_model('model/my_model2')
+# model2 = tf.keras.models.load_model('model/my_model2')
+model2 =keras.layers.TFSMLayer('model/my_model2', call_endpoint='serving_default')
 MAX_LEN = 40
 word_to_id = pickle.load(open("word_to_id.pkl","rb"))
 id_to_word = pickle.load(open("id_to_word.pkl","rb"))
