@@ -15,12 +15,12 @@ from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 from tensorflow.keras.optimizers import Adam
-from keras.layers import TFSMLayer
+from tensorflow.keras.models import load_model
 
 MAX_LEN = 40
 
-# Load model using TFSMLayer (compatible with Keras 3+)
-model2 = TFSMLayer("model/my_model2", call_endpoint="serving_default")
+# Load model using load_model (for inference)
+model2 = load_model("model/my_model2", compile=False)
 
 # Load word mappings
 word_to_id = pickle.load(open("word_to_id.pkl", "rb"))
@@ -36,7 +36,7 @@ def image_decoder(enc_image):
     index += 1
 
     while True:
-        output = model2([input_image, inputs])[0].numpy()
+        output = model2.predict([input_image, inputs])[0]
         output_i = np.argmax(output[index - 1])
         output_word = id_to_word[output_i]
         inputs[0, index] = output_i
@@ -63,7 +63,7 @@ def img_beam_decoder(n, image_enc):
             if word_to_id["<END>"] in s[0]:
                 prob_seq_2.append((p, s))
                 continue
-            output = model2([input_image, s])[0].numpy()
+            output = model2.predict([input_image, s])[0]
             output_topn_i = np.argsort(output[index - 1])[-n:]
             for i in output_topn_i:
                 s1 = np.copy(s)
