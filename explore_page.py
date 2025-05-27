@@ -26,11 +26,9 @@ import tensorflow as tf
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 
 from tensorflow.keras.optimizers import Adam
-import tensorflow.keras as keras
 
 
-# model2 = tf.keras.models.load_model('model/my_model2')
-model2 =keras.layers.TFSMLayer('model/my_model2', call_endpoint='serving_default')
+model2 = tf.keras.models.load_model('model/my_model2')
 MAX_LEN = 40
 word_to_id = pickle.load(open("word_to_id.pkl","rb"))
 id_to_word = pickle.load(open("id_to_word.pkl","rb"))
@@ -208,36 +206,36 @@ testing data : {len(test_list)}|
 
 
 
-# def show_predict_page():
+def show_predict_page():
 
-#     st.write("#### Input your own images")
-#     uploaded_file = st. file_uploader("Upload your image (jpg, jpeg, png)...")
+    st.write("#### Input your own images")
+    uploaded_file = st. file_uploader("Upload your image (jpg, jpeg, png)...")
 
-#     img_model = InceptionV3(weights='imagenet') # This will download the weight files for you and might take a while.
+    img_model = InceptionV3(weights='imagenet') # This will download the weight files for you and might take a while.
 
-#     new_input = img_model.input
-#     new_output = img_model.layers[-2].output
-#     img_encoder = Model(new_input, new_output) # This is the final Keras image encoder model we will use.
-
-
-#     if uploaded_file:
-#         image = PIL.Image.open(uploaded_file)
-#         st.image(image)
-
-#         #resize image
-#         new_image = np.asarray(image.resize((299,299))) / 255.0
-#         encoded_image = img_encoder.predict(np.array([new_image]))
+    new_input = img_model.input
+    new_output = img_model.layers[-2].output
+    img_encoder = Model(new_input, new_output) # This is the final Keras image encoder model we will use.
 
 
-#         output11 = image_decoder(encoded_image)
-#         output11 = output11.replace("<START>","").replace("<END>","")
-#         output22 = img_beam_decoder(3, encoded_image)[0][0][-1]
-#         output22 = output22.replace("<START>","").replace("<END>","")
+    if uploaded_file:
+        image = PIL.Image.open(uploaded_file)
+        st.image(image)
 
-#         df22 = {"Model type":["Greedy Output","Beam Search n=5"],
-#                "Output": [output11,output22]}
+        #resize image
+        new_image = np.asarray(image.resize((299,299))) / 255.0
+        encoded_image = img_encoder.predict(np.array([new_image]))
 
-#         st.dataframe(df22)
-#         st.write("The model has 40\% accuracy")
+
+        output11 = image_decoder(encoded_image)
+        output11 = output11.replace("<START>","").replace("<END>","")
+        output22 = img_beam_decoder(3, encoded_image)[0][0][-1]
+        output22 = output22.replace("<START>","").replace("<END>","")
+
+        df22 = {"Model type":["Greedy Output","Beam Search n=5"],
+               "Output": [output11,output22]}
+
+        st.dataframe(df22)
+        st.write("The model has 40\% accuracy")
 
 
