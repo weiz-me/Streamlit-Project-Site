@@ -14,23 +14,32 @@ st.markdown(
 
     **👈 Select a Project from the dropdown on the left**
 
+
+    Hi, my name is Wei Zhang. I’m a recent Computer Science Master’s graduate from Columbia University, actively seeking full-time opportunities in software engineering or development roles.
+    Feel free to explore my work and connect with me through the following platforms:
+
+    - Portfolio: https://weizhang45.com/
+    - LinkedIn: https://www.linkedin.com/in/weizhang45/
+    - GitHub: https://github.com/weiz-me
+    - Email: weizhang45name@gmail.com
+    - School Email: wz2580@columbia.edu
+
+    Looking forward to connecting!
+
     ### Project List
-
-    Hi, I am currently looking and full time.
-
-    - PP: Job Application Tracker - May 2025
-    - HPML: Trasnformer Inference Optimization (https://github.com/weiz-me/hpml_proj)
-    - ASE: Prompt Service API and Client App (https://github.com/orgs/ASE4156/repositories)
-    - AWS: CUThen Chatting APP - Fall 2023 (https://github.com/Infernaught/CUThen)
-    - AWS: Photo Album - Fall 2023 
-    - CV1: Image Motion Flow - Fall 2023
-    - CV1: Image Mosaicking/Stitching - Fall 2023
-    - CV1: Line and Circle Recoginizer - Fall 2023
-    - NLP: Image Caption Generator - Spring 2023
-    - AML: Movie Scoring Prediction - Spring 2023
-    - DB: Vehicle Database - Spring 2023
-    - AI: Tic-Tac-Toe AI - Spring 2023
-    - PP: Columbia Walkthrough - March 2023
+    1. PP: Job Application Tracker - May 2025
+    2. HPML: Trasnformer Inference Optimization (https://github.com/weiz-me/hpml_proj)
+    3. ASE: Prompt Service API and Client App (https://github.com/orgs/ASE4156/repositories)
+    4. AWS: CUThen Chatting APP - Fall 2023 (https://github.com/Infernaught/CUThen)
+    5. AWS: Photo Album - Fall 2023 
+    6. CV1: Image Motion Flow - Fall 2023
+    7. CV1: Image Mosaicking/Stitching - Fall 2023
+    8. CV1: Line and Circle Recoginizer - Fall 2023
+    9. NLP: Image Caption Generator - Spring 2023
+    10. AML: Movie Scoring Prediction - Spring 2023
+    11. DB: Vehicle Database - Spring 2023
+    12. AI: Tic-Tac-Toe AI - Spring 2023
+    13. PP: Columbia Walkthrough - March 2023
 
 
     
