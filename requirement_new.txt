@@ -6,4 +6,4 @@ scikit-image
 joblib
 yfinance
 scikit-learn
-tensorflow
+tensorflow-cpu
