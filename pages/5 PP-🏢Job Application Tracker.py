@@ -21,9 +21,13 @@ A full-stack web application designed to help users track and manage job applica
 - **Scraping Service**: OpenAI API to fetch and parse job data from target websites.
          
 ### Demo Video:
+         """)
 
-         
-### Demo Website:
+st.video(data="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID")
+
+st.write("""
+### Demo Website: 
+#### http://weizproject.ddns.net:3000/
 """)
-st.components.v1.iframe("http://weizproject.ddns.net:3000/", width=1500, height=1000, scrolling=True)
+st.components.v1.iframe("http://weizproject.ddns.net:3000/", width=1200, height=800, scrolling=True)
 
