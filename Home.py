@@ -17,7 +17,7 @@ st.markdown(
 
     Hi, my name is Wei Zhang. I’m a recent Computer Science Master’s graduate from Columbia University, actively seeking full-time opportunities in software engineering or development roles.
     Feel free to explore my work and connect with me through the following platforms:
-
+    
     - Portfolio: https://weizhang45.com/
     - LinkedIn: https://www.linkedin.com/in/weizhang45/
     - GitHub: https://github.com/weiz-me
@@ -26,6 +26,11 @@ st.markdown(
 
     Looking forward to connecting!
 
+    ### Resume link:
+    
+    - [📄 View My SE Resume (software Engineer)](https://github.com/weiz-me/weiz-me/blob/main/Wei_Zhang_Resume_SE_V1.pdf)
+    - [📄 View My Data/ML Resume](https://github.com/weiz-me/weiz-me/blob/main/Wei_Zhang_Resume_ML_V1.pdf)
+    
     ### Project List
     1. PP: Job Application Tracker - May 2025
     2. HPML: Trasnformer Inference Optimization (https://github.com/weiz-me/hpml_proj)

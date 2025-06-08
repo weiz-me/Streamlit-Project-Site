@@ -1,55 +1,39 @@
 import streamlit as st
-import sys
 
-import cv2
-import numpy as np
-import solutions_wz2580_hw4 as solutions
-import utils_hw4 as utils
+st.set_page_config(
+    page_icon="🧵"
+)
 
+st.write("""
+# 🧵 CV1 - Image Mosaicking & Stitching
 
-def upload_to_np(uploaded_file):
+### Project Links  
+▶️ **Demo Video**: [https://youtu.be/5jlrjD9x6Bc](https://youtu.be/5jlrjD9x6Bc)  
+💻 **GitHub**: [CV1-Image-MosaickingStitching(private)](https://github.com/weiz-me/CV1-Image-MosaickingStitching)
 
-    # Decode the image using OpenCV
-   image = cv2.imdecode(np.frombuffer(uploaded_file.getvalue(), np.uint8), 1)
+### Project Description:  
+This project implements a complete **image mosaicking system** from scratch using **homography estimation**, **RANSAC**, and **backward warping**. Given a set of overlapping images, the algorithm computes keypoint correspondences, estimates the transformation, and blends them into a seamless panorama. It's part of a CV1 assignment focused on geometric vision techniques.
 
-   # img1 = cv2.imdecode(np.frombuffer(uploaded_file.read(), dtype=np.uint8), cv2.IMREAD_ANYCOLOR)
+### Code Summary:
+- **Homography Estimation**: Uses least-squares via eigenvector decomposition to compute 3×3 transformations.
+- **RANSAC**: Identifies inliers and filters out noisy correspondences between image pairs.
+- **Backward Warping**: Uses `cv2.remap` for pixel-accurate image projection using inverse homography.
+- **Blending**: Supports both "overlay" and smooth "distance-based blend" modes for stitching.
+- **Utility**: Modular functions allow stitching of arbitrary image sequences and panoramas.
 
-   # Convert dtype to np.float64
-   img1_float64 = (image/255).astype(np.float64)
+### Highlights:
+- Built using **NumPy**, **OpenCV**, and **SciPy**.
+- SIFT-based feature matching with custom stitching logic.
+- Visualizations and mosaic generation via Matplotlib and utility helpers.
 
-   return img1_float64
+### Demo Video:
+Watch the live demo here:  
+📺 [https://youtu.be/5jlrjD9x6Bc](https://youtu.be/5jlrjD9x6Bc)
+""")
 
-st.title("CV1-Image MosaickingStitching")
-# st.write("#### Input your own images")
-# col1, col2= st.columns(2)
+# You can embed video with st.video or just use the link as above.
+st.video("https://youtu.be/5jlrjD9x6Bc")
 
-# with col1:
-#    left_image = st.file_uploader("Upload your left image.")
-#    if left_image:
-#       l = upload_to_np(left_image)
-#       st.image(left_image)
-#       st.image(l)
-
-# with col2:
-#    middle_image = st.file_uploader("Upload your middle image (base image).")
-#    if middle_image:
-#       st.image(middle_image)
-#       m = upload_to_np(middle_image)
-#       st.image(m)
-
-
-# # stitch = st.button("stitch images")
-# if stitch:
-#     if not left_image:
-#       st.write("please input left image..")
-#     elif not middle_image:
-#       st.write("please input middle image")
-#     else:
-#       img = solutions.stitch_imgs([m,l])
-
-
-#     img = np.clip(img, 0, 1)
-#     st.image(img, caption="result", use_column_width=True)
 st.write("#### Input Example")
 col1, col2, col3 = st.columns(3)
 with col1:

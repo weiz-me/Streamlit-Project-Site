@@ -8,7 +8,7 @@ st.write("""
 # PP-🏢Job Application Tracker
 
 ### Project Links  
-🔗 **Site**: [http://weizproject.ddns.net:3000/](http://weizproject.ddns.net:3000/)  
+🔗 **Site**: [coming soon]()  
 💻 **GitHub**: [Tracking_Job_AP](https://github.com/weiz-me/Tracking_Job_AP)
 
 ### Project Description:  
@@ -21,13 +21,16 @@ A full-stack web application designed to help users track and manage job applica
 - **Scraping Service**: OpenAI API to fetch and parse job data from target websites.
          
 ### Demo Video:
+         In progress: expected 6/10/2025.
          """)
 
-st.video(data="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID")
+# st.video(data="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID")
 
 st.write("""
 ### Demo Website: 
 #### http://weizproject.ddns.net:3000/
+        In progress: expected 6/10/2025.
+
 """)
 st.components.v1.iframe("http://weizproject.ddns.net:3000/", width=1200, height=800, scrolling=True)
 

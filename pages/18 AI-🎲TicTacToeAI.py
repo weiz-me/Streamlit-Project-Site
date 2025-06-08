@@ -1,86 +1,33 @@
 import streamlit as st
-#from predict_page1 import show_predict_page
-#from explore_page1 import show_explore_page
 
+st.set_page_config(page_title="AI-TicTacToe AI Games", page_icon="🎮")
 
-#page = st.sidebar.selectbox("Explore Or Predict", ("Predict", "Explore"))
-st.set_page_config(
-    page_icon="🧑‍💻"
-)
+st.write("""
+# AI-TicTacToe AI Games 🎯🤖
 
+### Project Links  
+▶️ **Demo Website**: [https://ai-tictactoeai.onrender.com](https://ai-tictactoeai.onrender.com)  
+▶️ **Demo Video**: [https://www.youtube.com/watch?v=zR3XVf887D0](https://www.youtube.com/watch?v=zR3XVf887D0)  
 
-def show_page():
+### Project Description
+This application implements AI strategies for generalized m,n,k-games (Tic-Tac-Toe and its variants), using:
 
-    st.title("TicTacToe AI Games")
+- 🔍 **Alpha-Beta Pruning Search**: Efficient minimax decision-making for adversarial games  
+- 🌲 **Monte Carlo Tree Search (MCTS)**: Simulates random playouts and backpropagates outcomes to refine moves  
+- 🧠 **Custom Game Loop**: Integrates human input and AI decisioning via Streamlit interface
 
-    st.write("""### Player Options""")
+Tech stack:
+- `NumPy` and `Streamlit` for gameplay interface  
+- Modular AI strategies implemented from scratch  
+- Random, ABS, and MCTS-based strategies available per player
 
-    px = st.selectbox("Player X",["RANDOM","ABS","MCTS"])
-    py = st.selectbox("Player Y",["MCTS","RANDOM","ABS"])
-    pg = st.selectbox("Number of Games",range(1,20))
+### Project Demo Video
+""")
 
-    playermap = {"RANDOM":0,"ABS": 1,"MCTS" :2,"You": 3}
+# Replace with your actual YouTube video URL
+st.video("https://www.youtube.com/watch?v=zR3XVf887D0")
 
-    st.write("""### Board Options""")
+st.write("### Project Site: https://ai-tictactoeai.onrender.com")
 
-    pm = st.selectbox("Row",[3,4,5])
-    pn = st.selectbox("Col",[3,4,5])
-    pk = st.text_input("How many in a row to win",value="3")
-
-    st.write("""### Computer Options""")
-
-    pr = st.text_input("MCTS (Monte Carlo Tree Search) rollouts",value="500")
-    pa = st.text_input("MCTS (Monte Carlo Tree Search) alpha",value="20")
-
-    ok = st.button('Start')
-
-
-    if ok:
-        import numpy as np
-
-        import hw2.mnk_game as mnk
-        from hw2.utils import GameStrategy    
-
-        m = pm
-        n = pn
-        k = pk
-
-        rollouts = int(pr)
-        alpha = int(pa)
-
-        num_games = pg
-        Xstrat = GameStrategy(playermap[px])
-        Ostrat = GameStrategy(playermap[py])
-        print_result = True
-
-        state = np.full((m, n), ".")
-        player = "X"
-
-        results = {"X wins": 0, "O wins": 0, "draws": 0}
-        
-        for _ in range(num_games):
-            result = mnk.game_loop(
-                state, player, k, Xstrat, Ostrat, rollouts, alpha, print_result
-            )
-            
-            if result == 1:
-                results["X wins"] += 1
-                st.write("X wins")
-                st.write(results)
-            elif result == -1:
-                results["O wins"] += 1
-                st.write("O wins")
-                st.write(results)
-
-            else:
-                results["draws"] += 1
-                st.write("Ties")
-                st.write(results)
-        
-        st.write(results)
-        again = st.button("Play again?")
-
-
-        
-show_page()
-
+# Embed the live demo site
+st.components.v1.iframe("https://ai-tictactoeai.onrender.com", width=1500, height=800, scrolling=True)

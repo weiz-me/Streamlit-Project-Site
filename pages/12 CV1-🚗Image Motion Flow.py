@@ -1,58 +1,46 @@
 import streamlit as st
-import sys
+import streamlit as st
 
-import cv2
-import numpy as np
-import solutions_wz2580_hw7 as solutions
-import utils_hw7 as utils
+st.set_page_config(
+    page_icon="📹"
+)
 
+st.write("""
+# 📹 CV1 - Image Motion Flow
 
-def upload_to_np(uploaded_file):
+### Project Links  
+🔗 **Site**: [https://cv1-image-motion-flow.onrender.com/](https://cv1-image-motion-flow.onrender.com/)  
+💻 **GitHub**: [CV1-Image-Motion-Flow(private)](https://github.com/weiz-me/CV1-Image-Motion-Flow)
+▶️ **Demo Video**: [https://youtu.be/gW6Wj-rWLRo](https://youtu.be/gW6Wj-rWLRo)  
 
-    # Decode the image using OpenCV
-   # image = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1)
+### Project Description:  
+This project implements optical flow estimation using the **Lucas-Kanade method**, a foundational technique in computer vision. The system takes in two grayscale image frames and calculates the apparent motion (flow vectors) at each pixel based on temporal intensity changes. 
 
-   img1 = cv2.imdecode(np.frombuffer(uploaded_file.read(), dtype=np.uint8), cv2.IMREAD_ANYCOLOR)
+Built in **Python** with **NumPy**, **SciPy**, and **Matplotlib**, this project demonstrates key concepts in motion analysis, including image gradients and local motion estimation using a sliding window approach.
 
-   # Convert dtype to np.float64
-   # img1_float64 = (image/255).astype(np.float64)
+### Code Summary:
+- **Optical Flow Algorithm**: Uses spatial and temporal image gradients with a window-based least squares solution.
+- **Libraries**: NumPy and SciPy for numerical operations; Matplotlib for flow visualization.
+- **Core Functions**:
+  - `computeFlow(img1, img2, window_size)`: Applies Lucas-Kanade method to compute motion vectors `(u, v)` for each pixel.
+  - `s(x)`: Helper function to visualize intermediate matrices and results.
 
-   return img1
+### Features:
+- Convolution-based image gradient estimation for performance.
+- Handles edge cases such as singular matrices using exception handling.
+- Demonstrates motion between frames in visual plots.
 
-st.title("CV1-Image Motion Flow")
-st.write("#### Input your own images")
-col1, col2 = st.columns(2)
-col11, col22 = st.columns(2)
+### Demo Video:
+""")
 
-with col1:
-   left_image = st.file_uploader("Upload your base image.")
-   if left_image:
-      l = upload_to_np(left_image)
-      st.image(left_image)
-      st.image(l)
+st.video(data="https://youtu.be/gW6Wj-rWLRo")
 
-with col2:
-   middle_image = st.file_uploader("Upload your next image.")
-   if middle_image:
-      st.image(middle_image)
-      m = upload_to_np(middle_image)
-      st.image(m)
-with col11:
-   ws = st.slider("window size",1,100,20)
-with col22:
-   scale = st.slider("scale",1,30,15)
-stitch = st.button("Image Motion")
-if stitch:
-   if not left_image:
-      st.write("please input first image..")
-   elif not middle_image:
-      st.write("please input next image")
-   else:
-      img1_gray = cv2.cvtColor(l, cv2.COLOR_BGR2GRAY)
-      img2_gray = cv2.cvtColor(m, cv2.COLOR_BGR2GRAY)
-      flow = solutions.computeFlow(img1_gray, img2_gray, window_size=ws)
-      needle = utils.draw_flow_arrows(img1_gray, flow, step=16, scale=scale, L=4)
-      st.image(needle)
+st.write("""
+### Demo Website (3 min to boot up the website):  
+#### https://cv1-image-motion-flow.onrender.com/  
+""")
+
+st.components.v1.iframe("https://cv1-image-motion-flow.onrender.com/", width=1200, height=800, scrolling=True)
 
 
 st.write("#### Input Example")
