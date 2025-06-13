@@ -28,12 +28,12 @@ A full-stack web application designed to help users track and manage job applica
 
 st.write("""
 ### Demo Website: 
-#### Frontend: 18.118.200.220:3000    
+#### Frontend: http://18.118.200.220:3000   
 """)
-st.components.v1.iframe("18.118.200.220:3000", width=1200, height=800, scrolling=True)
+st.components.v1.iframe("http://18.118.200.220:3000", width=1200, height=800, scrolling=True)
 
 
 st.write("""
-#### Backend: 18.118.200.220:5000
+#### Backend: http://18.118.200.220:5000
 """)
-st.components.v1.iframe("18.118.200.220:5000", width=1200, height=800, scrolling=True)
+st.components.v1.iframe("http://18.118.200.220:5000", width=1200, height=800, scrolling=True)
