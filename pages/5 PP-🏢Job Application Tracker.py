@@ -21,16 +21,19 @@ A full-stack web application designed to help users track and manage job applica
 - **Scraping Service**: OpenAI API to fetch and parse job data from target websites.
          
 ### Demo Video:
-         In progress: expected 6/10/2025.
+         In progress: expected 6/14/2025.
          """)
 
 # st.video(data="https://www.youtube.com/watch?v=YOUR_YOUTUBE_VIDEO_ID")
 
 st.write("""
 ### Demo Website: 
-#### http://weizproject.ddns.net:3000/
-        In progress: expected 6/10/2025.
-
+#### Frontend: https://tracking-job-ap-frontend.vercel.app/
 """)
-st.components.v1.iframe("http://weizproject.ddns.net:3000/", width=1200, height=800, scrolling=True)
+st.components.v1.iframe("https://tracking-job-ap-frontend.vercel.app/", width=1200, height=800, scrolling=True)
 
+
+st.write("""
+#### Backend: https://tracking-job-ap-backend.onrender.com/
+""")
+st.components.v1.iframe("https://tracking-job-ap-backend.onrender.com/", width=1200, height=800, scrolling=True)
