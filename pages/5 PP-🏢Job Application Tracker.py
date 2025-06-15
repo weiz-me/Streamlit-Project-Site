@@ -28,12 +28,12 @@ A full-stack web application designed to help users track and manage job applica
 
 st.write("""
 ### Demo Website: 
-#### Frontend: http://18.118.200.220:3000   
+#### Frontend: https://tracking-job-ap-frontend.vercel.app
 """)
-st.components.v1.iframe("http://18.118.200.220:3000", width=1200, height=800, scrolling=True)
+st.components.v1.iframe("https://tracking-job-ap-frontend.vercel.app", width=1200, height=800, scrolling=True)
 
 
 st.write("""
-#### Backend: http://18.118.200.220:5000
+#### Backend: https://tracking-job-ap-backend.onrender.com/
 """)
-st.components.v1.iframe("http://18.118.200.220:5000", width=1200, height=800, scrolling=True)
+st.components.v1.iframe("https://tracking-job-ap-backend.onrender.com/", width=1200, height=800, scrolling=True)
